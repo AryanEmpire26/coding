@@ -21,7 +21,7 @@ int solver(int arr[], int n)
         {
             rightmax = arr[i];
         }
-        rightarr[i] = leftmax;
+        rightarr[i] = rightmax;
     }
     int res = 0;
     for (int i = 0; i < n; i++)

@@ -1,18 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 int solver(int arr[],int n){
-        int res=arr[0];
-        int curr=0;
-    for(int i=0;i<n;i++){
-        curr=curr+arr[i];
-        if (curr > res)
+    
+    int cnt=1;
+    int res=1;
+    for(int i=1;i<n;i++){
+        if ((arr[i] % 2 != 0 and arr[i - 1] % 2 == 0) or (arr[i] % 2 == 0 and arr[i - 1] % 2 != 0))
         {
-            res = curr;
+            cnt++;
+            res=max(res,cnt);
+            
         }
-        if(curr<0){
-            curr=0;
+        else{
+            cnt=1;
         }
-       
     }
     return res;
 }
